@@ -1,5 +1,7 @@
 #Iterator
-##練習問題（補足）
+（Iterator Method が有効活用できるケースはなんでしょうか．）
+
+##補足
 ###問題1-1
 巻末にある解答例の通りにコンパイルを行うと以下のように警告が出ます．
 
@@ -23,7 +25,7 @@ public class BookShelf implements Aggregate {
   }
   public Book getBookAt(int index) {
     // return (Book)books.get(index); =>
-    return books.get(index);
+    return this.books.get(index);
   }
   public void appendBook(Book book) {
     this.books.add(book);
