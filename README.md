@@ -16,12 +16,12 @@
 * 03_TemplateMethod - 徳永
 
 ####11/28
-* 04_FactoryMethod - 山崎
+* 04_FactoryMethod - 徳永
 * 05_Singleton - 平出
 
 ####12/5 ~
 * 06_Prototype - 益永
-* 07_Builder - 徳永
+* 07_Builder - 山崎
 * 08_AbstractFactory - 山崎
 * 09_Bridge - 平出
 * 10_Strategy - 益永
