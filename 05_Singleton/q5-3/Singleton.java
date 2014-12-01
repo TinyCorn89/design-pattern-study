@@ -4,8 +4,8 @@ public class Singleton {
     System.out.println("Generated a new instance.");
     slowdown();
   }
-  public static Singleton getInstance() {
-  //public static synchronized Singleton getInstance() {
+  //public static Singleton getInstance() {
+  public static synchronized Singleton getInstance() {
     if (singleton == null) {
       singleton = new Singleton();
     }
@@ -15,7 +15,7 @@ public class Singleton {
     try {
       Thread.sleep(500);
     } catch (InterruptedException e) {
-
+      e.printStackTrace();
     }
   }
 }
