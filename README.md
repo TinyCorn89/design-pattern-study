@@ -39,7 +39,7 @@
 
 ####12/22(Mon) 10:00 ~ 12:00
 * 16_Mediator - 佐藤
-* 17_Observer - 益永
+* 17_Observer - 平出
 
 ####T.B.D.
 * 18_Memento - 
