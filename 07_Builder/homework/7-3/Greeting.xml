@@ -1,0 +1,10 @@
+<info>
+	<title>Greeting</title>
+	<string>朝から昼にかけて</string>
+	 	<item>おはよう</item>
+	 	<item>こんにちわ</item>
+	<string>夜に</string>
+	 	<item>こんばんわ</item>
+	 	<item>おやすみ</item>
+	 	<item>さよなら</item>
+</info>
