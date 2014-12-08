@@ -7,7 +7,7 @@ public class FileDisplayImpl extends DisplayImpl {
   public FileDisplayImpl(String filename) {
     this.filename = filename;
   }
-  public void rawOpen() {
+  public void rawOpen() throws IOException {
     try {
       reader = new BufferedReader(new FileReader(filename));
       reader.mark(MAX_READAHEAD_LIMIT);

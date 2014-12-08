@@ -1,11 +1,4 @@
-Prototype
-
-
-#議論した点
-##clone()
-デフォルトでは，浅いコピーが行われる．  
-インスタンスのフィールドは参照コピーになってしまう．  
-実装はObjectクラスで行われる．
-
-##どうCloneNotSupportedErrorが呼ばれるのか
-
+#Prototype
+##疑問点
+Cloneableインタフェースを実装していないクラスがClone()を呼び出したときに、どのようにしてCloneNotSuppotedExceptionを投げているのか
+⇒(調査中)

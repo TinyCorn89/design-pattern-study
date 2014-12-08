@@ -1,6 +1,5 @@
 #Bridge
 
-
 ##補足
 ###問題9-2
 解答例にある reader.mark() と reader.reset() についてです．  
@@ -18,9 +17,10 @@ public class FileDisplayImpl extends DisplayImpl {
   public void rawOpen() {
     try {
       reader = new BufferedReader(new FileReader(filename));
-      // Java.io.BufferedReader.mark() Method
+      /***
+        Java.io.BufferedReader.mark() Method
+      ***/
       reader.mark(MAX_READAHEAD_LIMIT);
-      //
     } catch (IOException e) {
       e.printStackTrace();
     }
@@ -29,9 +29,10 @@ public class FileDisplayImpl extends DisplayImpl {
   public void rawPrint() {
     try {
       String line;
-      // Java.io.BufferedReader.reset() Method
+      /***
+        Java.io.BufferedReader.reset() Method
+      ***/
       reader.reset();
-      //
       while ((line = reader.readLine()) != null) {
         System.out.println("> " + line);
       }
@@ -50,7 +51,7 @@ public class FileDisplayImpl extends DisplayImpl {
 }
 ```
 __mark(int readAheadLimit) ：現在の読み込み位置を保存する．__  
-* readAheadLimit：位置を保存している間読み込める文字のバイト数（0 >= 0）  
+* readAheadLimit：位置を保存している間読み込める文字のバイト数（readAheadLimit >= 0）  
 * 8192がデフォルトとなっているため，それ以下を指定しても無視される．c.f. [参考](http://blog.mwsoft.jp/article/45580251.html)  
 
 __reset() ：mark(int readAheadLimit) で保存した読み込み位置に戻る．__  
@@ -61,3 +62,7 @@ __reset() ：mark(int readAheadLimit) で保存した読み込み位置に戻る
 
 c.f. [Java.io.BufferedReader.mark() Method](http://www.tutorialspoint.com/java/io/bufferedreader_mark.htm)  
 c.f. [Java.io.BufferedReader.reset() Method](http://www.tutorialspoint.com/java/io/bufferedreader_reset.htm)
+
+##議論した点
+###例外処理について
+__c.f. [Javaの例外（ブログ）](http://www.ne.jp/asahi/hishidama/home/tech/java/exception.html)__

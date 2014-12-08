@@ -1,34 +1,31 @@
 import java.io.*;
 
-public class HTMLBuilder extends Builder{
+public class XMLBuilder extends Builder{
 	private String filename;
 	private PrintWriter writer;
 	protected void buildTitle(String title) {
-		filename = title + ".html" ;
+		filename = title + ".xml";
 		try {
 			writer = new PrintWriter(new FileWriter(filename));
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
 
-		writer.println("<html><head><title>" + title + "</title></head><body>");
-		writer.println("<h1>" + title + "</h1>");
+		writer.println("<info>\n\t<title>" + title + "</title>");
 	}
 
 	protected void buildString(String str){
-		writer.println("<p>" + str + "</p>");
+		writer.println("\t<string>" + str + "</string>");
 	}
 
 	protected void buildItems(String[] items) {
-		writer.println("<ul>");
 		for (int i = 0 ; i <items.length; i++) {
-			writer.println("<li>" + items[i] + "</li>");
+			writer.println("\t \t<item>" + items[i] + "</item>");
 		}
-		writer.println("</ul>");
 	}
 
 	protected void buildDone(){
-		writer.println("</body></html>");
+		writer.println("</info>");
 		writer.close();
 	}
 
