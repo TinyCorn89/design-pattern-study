@@ -1,2 +1,3 @@
 *.memo
 *.class
+.DS_Store

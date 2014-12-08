@@ -21,9 +21,11 @@
 * 06_Prototype - 益永
 * 07_Builder - 山崎
 
-####12/08(Mon) 10:00 ~ 12:00
-* 08_AbstractFactory - 山崎
+####12/08(Mon) 10:00 ~ 11:00
 * 09_Bridge - 平出
+
+####12/09(Tue) or 12/11(Thu) 17:00 ~ 18:00
+* 08_AbstractFactory - 山崎
 
 ####12/12(Fri) 13:30 ~ 15:30
 * 10_Strategy - 山本
@@ -37,14 +39,18 @@
 * 14_ChainOfResponsibility - 徳永
 * 15_Facade - 山本
 
-####12/22(Mon) 10:00 ~ 12:00
+####1/9(Fri)
 * 16_Mediator - 佐藤
 * 17_Observer - 平出
 
-####T.B.D.
-* 18_Memento - 
-* 19_State - 
-* 20_Flyweight - 
-* 21_Proxy - 
-* 22_Command - 
+####1/16(Fri)
+* 18_Memento - 益永
+* 19_State - 山崎
+
+####1/19(Mon)
+* 20_Flyweight - 徳永 
+* 21_Proxy - 山本
+
+####1/23(Fri)
+* 22_Command - 佐藤
 * 23_Interpreter - 
