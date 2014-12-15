@@ -18,9 +18,18 @@ public class Main {
         b2.show();
         b3.show();
         
-        Display b4 = new SideBorder(new FullBorder(new FullBorder(new SideBorder
-        (new FullBorder(new StringDisplay("Hello")), '*'
-        ))), '/');
+        Display b4 = new SideBorder(
+            new FullBorder(
+                new FullBorder(
+                    new SideBorder(
+                        new FullBorder(
+                            new StringDisplay("Hello")
+                        ), '*'
+                    )
+                )
+            ), '/'
+        );
+
         System.out.println("\n ↓b4↓\n");
         b4.show();
 
