@@ -20,14 +20,14 @@ public class Main{
 
 		//選手を作るよ。名前と使用する戦力を入力
 		//なにこの書き方！！そんなとこにもnew入るのかよ
-		Player player1 = new Player("HIRADE", new WinningStrategy(seed1));
+		Player player1 = new Player("HIRADE", new RandomStrategy(seed1));
 		Player player2 = new Player("MASUNAGA", new ProbStrategy(seed2));
 
 		System.out.println("//////////はっけよい、のこった！！！//////////");
 		System.out.println("");
 
 		//それでは試合開始！1000本勝負
-		for(int i = 1; i <= 100000; i++){
+		for(int i = 1; i <= 20; i++){
 			//両選手の手を決定
 			//これはインスタンス化・・・・じゃない？
 			//なぜHandクラス
