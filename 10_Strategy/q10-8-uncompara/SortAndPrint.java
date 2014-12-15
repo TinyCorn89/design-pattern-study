@@ -1,9 +1,9 @@
 public class SortAndPrint{
-	Comparable[] data;
+	String[] data;
 	//コンストラクタを使わない場合は、これでそのクラスのメソッドが使えるってこと？newイランの？
 	Sorter sorter;
 
-	public SortAndPrint(Comparable[] data, Sorter sorter){
+	public SortAndPrint(String[] data, Sorter sorter){
 		this.data = data;
 		this.sorter = sorter;
 	}

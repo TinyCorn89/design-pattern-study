@@ -1,5 +1,5 @@
 public class SelectionSorter implements Sorter {
-	public void sort(Comparable[] data){
+	public void sort(String[] data){
 		for (int i = 0; i < data.length - 1 ; i++){
 			int min = i;
 			for(int j = i + 1; j < data.length; j++){
@@ -7,7 +7,7 @@ public class SelectionSorter implements Sorter {
 					min = j;
 				}
 			}
-			Comparable passingplace = data[min];
+			String passingplace = data[min];
 			data[min] = data[i];
 			data[i] = passingplace;
 		}

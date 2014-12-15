@@ -45,7 +45,7 @@ public class Hand{
 	};
 	//弱いかどうかの判定・・・・これ要る？
 	public boolean isWeakerThan(Hand h){
-		return fight(h) == -1;
+		return fight(h) == 1;
 	};
 
 	//値を使って強さを判定！
