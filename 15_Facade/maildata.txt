@@ -1,0 +1,3 @@
+hirade.chan@fujixerox.com=Hirade Chan
+masunaga.teacher@fujixerox.com=Masunaga San
+yamazaki.daisenpai@fujixerox.com=Yamazaki Meijiro
