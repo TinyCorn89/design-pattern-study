@@ -2,6 +2,11 @@
 mainで呼ばれてる、ページを作る作業を実際に記述してるクラスだよー
 いままではMainクラスに書いていたような内容だよー
 
+
+テキストで使ってるEnumeration　はIteratorに変更！
+java.util.Enumerationは，
+Javaのコアパッケージの中ではIteratorより古くからある列挙用のインタフェースです。
+現在，このインタフェースを使うメリットはほとんどありません
 */
 
 
@@ -10,6 +15,7 @@ package pagemaker;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Properties;
+import java.util.Enumeration;
 
 public class PageMaker{
 	private PageMaker(){
@@ -38,33 +44,40 @@ public class PageMaker{
 			writer.close();
 
 			//作り終わったら、その旨を報告します。
-			System.out.println("///////////作成完了////////////");
-			System.out.println("ファイル名" + filename);
-			System.out.println("アドレス" + mailaddr);
-			System.out.println("ゆーざーねーむ" + username);
-			System.out.println("///////////////////////");
+			finishInfo("ファイル名:" + filename);
 
 		}catch(IOException e){
 			e.printStackTrace();
 		}
 	}
-/*	public static void makeLinkPage(String filename){
+	public static void makeLinkPage(String filename){
 		try{
 			Properties mailprop = Database.getProperties("maildata");
-			String username = mailprop.getProperty(mailaddr);
+			
 			HtmlWriter writer = new HtmlWriter(new FileWriter(filename));
-			writer.title("Welcome to" + username + "'s page!");
-			writer.paragraph(username + "のページにようこそ！");
+			writer.title("リンクペィジ");
+			writer.paragraph("ひゃっはーここはリンクページだ！！");
+			writer.paragraph("Database内の個人情報を晒すぜ！");
 
-			writer.paragraph("メール待ってるぜ！");
-			writer.mailTo(mailaddr, username);
+			Enumeration ite = mailprop.propertyNames();
+			while (ite.hasMoreElements()){
+				String mailaddr = (String)ite.nextElement();
+			    String username = mailprop.getProperty(mailaddr, "(unknown)");
+				writer.mailTo(mailaddr, username);
+			}
 			writer.close();
-			System.out.println("///////////作成完了////////////");
-			System.out.println("ファイル名" + filename);
-			System.out.println("リンクページだよ！");
-			System.out.println("///////////////////////");
+
+			//作り終わったら、その旨を報告します。
+			finishInfo("ファイル名:" + filename);
+
 		}catch(IOException e){
 			e.printStackTrace();
 		}
-	}*/
+	}
+
+	public static void finishInfo(String text){
+		System.out.println("///////////作成完了////////////");
+		System.out.println(text);
+		System.out.println("//////////やったー！////////////");
+	}
 }
