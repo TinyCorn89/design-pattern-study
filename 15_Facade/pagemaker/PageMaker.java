@@ -3,7 +3,7 @@ mainで呼ばれてる、ページを作る作業を実際に記述してるク�
 いままではMainクラスに書いていたような内容だよー
 
 
-テキストで使ってるEnumeration　はIteratorに変更！
+テキストで使ってるEnumeration　はIteratorに変更！・・・・できなかった。
 java.util.Enumerationは，
 Javaのコアパッケージの中ではIteratorより古くからある列挙用のインタフェースです。
 現在，このインタフェースを使うメリットはほとんどありません
@@ -22,15 +22,15 @@ public class PageMaker{
 		//自分、今プライベートなんで
 		//インスタンス化させへんで
 	}
-	public static void makeWelcomePage(String mailaddr, String filename){
+	public static void makeWelcomePage(String username, String filename){
 		try{
 			//なんで突然Databaseクラスのメソッドが使えるんですかねぇ・・・。同じパッケージだから？
 			//Database databese;なんて宣言は要らないの？
 			//propertiesオブジェクト？を持ってきます。(new Properties をやってる)
 			Properties mailprop = Database.getProperties("maildata");
 
-			//プロパティファイルのアドレス（ker）から名前（value）を取得
-			String username = mailprop.getProperty(mailaddr);
+			//プロパティファイルの名前（ker）からアドレス（value）を取得
+			String mailaddr = mailprop.getProperty(username);
 
 			//コンストラクタの引数はWriteだけど、FileWriter送ってもいいの？
 			//FileWriterがWriterの子クラスだからかな
@@ -40,11 +40,11 @@ public class PageMaker{
 			writer.title("Welcome to" + username + "'s page!");
 			writer.paragraph(username + "のページにようこそ！");
 			writer.paragraph("メール待ってるぜ！");
-			writer.mailTo(mailaddr, username);
+			writer.mailTo(username, mailaddr);
 			writer.close();
 
 			//作り終わったら、その旨を報告します。
-			finishInfo("ファイル名:" + filename);
+			finish("ファイル名:" + filename);
 
 		}catch(IOException e){
 			e.printStackTrace();
@@ -59,23 +59,25 @@ public class PageMaker{
 			writer.paragraph("ひゃっはーここはリンクページだ！！");
 			writer.paragraph("Database内の個人情報を晒すぜ！");
 
-			Enumeration ite = mailprop.propertyNames();
-			while (ite.hasMoreElements()){
-				String mailaddr = (String)ite.nextElement();
-			    String username = mailprop.getProperty(mailaddr, "(unknown)");
+
+			Enumeration mpEnum = mailprop.propertyNames();
+			while(mpEnum.hasMoreElements()){
+				String mailaddr = (String)mpEnum.nextElement();
+			    String username = mailprop.getProperty(mailaddr);
 				writer.mailTo(mailaddr, username);
 			}
+
 			writer.close();
 
 			//作り終わったら、その旨を報告します。
-			finishInfo("ファイル名:" + filename);
+			finish("ファイル名:" + filename);
 
 		}catch(IOException e){
 			e.printStackTrace();
 		}
 	}
 
-	public static void finishInfo(String text){
+	public static void finish(String text){
 		System.out.println("///////////作成完了////////////");
 		System.out.println(text);
 		System.out.println("//////////やったー！////////////");

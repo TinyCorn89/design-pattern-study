@@ -26,7 +26,7 @@ public class HtmlWriter{
 		paragraph("<a href=&quot;" + href + "&quot;>" + caption + "</a>");
 	}
 
-	public void mailTo (String mailaddr, String username) throws IOException{
+	public void mailTo (String username, String mailaddr) throws IOException{
 		link("mailTo:" + mailaddr, username);
 	}
 
