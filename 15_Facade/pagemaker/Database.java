@@ -12,6 +12,7 @@ package pagemaker;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.Properties;
+import java.util.Iterator;
 
 public class Database{
 	private Database(){
