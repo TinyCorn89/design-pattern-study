@@ -33,7 +33,7 @@
 
 ####12/15(Mon) 10:00 ~ 12:00
 * 12_Decorator - 益永
-* 13_Visitor - 山崎
+* 13_Visitor - 平出
 
 ####12/19(Fri) 10:00 ~ 12:00 - 野田さんにメンターをお願いする．
 * 14_ChainOfResponsibility - 徳永
@@ -41,7 +41,7 @@
 
 ####01/09(Fri)
 * 16_Mediator - 佐藤
-* 17_Observer - 平出
+* 17_Observer - 山崎
 
 ####01/16(Fri)
 * 18_Memento - 益永
