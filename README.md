@@ -39,18 +39,18 @@
 * 14_ChainOfResponsibility - 徳永
 * 15_Facade - 山本
 
-####01/09(Fri)
+####01/09(Fri) 10:00 ~ 12:00
 * 16_Mediator - 佐藤
 * 17_Observer - 山崎
 
-####01/16(Fri)
+####01/16(Fri) 10:00 ~ 12:00
 * 18_Memento - 益永
 * 19_State - 山崎
 
-####01/19(Mon)
+####01/19(Mon) 10:00 ~ 12:00
 * 20_Flyweight - 徳永 
 * 21_Proxy - 山本
 
-####01/23(Fri)
+####01/23(Fri) 10:00 ~ 12:00
 * 22_Command - 佐藤
-* 23_Interpreter - 
+* 23_Interpreter - 平出
