@@ -54,5 +54,5 @@
 * 22_Command - 佐藤
 * 23_Interpreter - 平出
 
-####Suspended
-* 19_State - 山崎
+####01/26(Mon) 11:30 ~ 12:30
+* 19_State - 徳永
