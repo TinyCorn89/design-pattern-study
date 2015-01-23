@@ -1,6 +1,9 @@
+package language;
+
 import java.util.*;
 
-public class Context {
+public class Context implements ExecutorFactory {
+  private ExecutorFactory factory;
   private StringTokenizer tokenizer;
   private String currentToken;
   public Context(String text) {
@@ -32,5 +35,11 @@ public class Context {
       throw new ParseException("Warning: " + e);
     }
     return number;
+  }
+  public void setExecutorFactory(ExecutorFactory factory) {
+    this.factory = factory;
+  }
+  public Executor createExecutor(String name) {
+    return factory.createExecutor(name);
   }
 }
