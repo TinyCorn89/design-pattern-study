@@ -1,7 +1,10 @@
-import java.util.ArrayList;
+package language;
 
+import java.util.*;
+
+// <command list> ::= <command>* end
 public class CommandListNode extends Node {
-  private ArrayList<Node> list = new ArrayList<Node>();
+  private ArrayList list = new ArrayList();
   public void parse(Context context) throws ParseException {
     while (true) {
       if (context.currentToken() == null) {
@@ -14,6 +17,12 @@ public class CommandListNode extends Node {
         commandNode.parse(context);
         list.add(commandNode);
       }
+    }
+  }
+  public void execute() throws ExecuteException {
+    Iterator it = list.iterator();
+    while (it.hasNext()) {
+      ((CommandNode)it.next()).execute();
     }
   }
   public String toString() {

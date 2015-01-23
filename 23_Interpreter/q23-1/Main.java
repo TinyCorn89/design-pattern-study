@@ -1,20 +1,52 @@
+import language.InterpreterFacade;
+import turtle.TurtleCanvas;
+
 import java.util.*;
 import java.io.*;
+import java.awt.*;
+import java.awt.event.*;
 
-public class Main {
-  public static void main(String[] args) {
-    try {
-      BufferedReader reader = new BufferedReader(new FileReader("program.txt"));
-      String text;
-      while ((text = reader.readLine()) != null) {
-        System.out.println("text = \"" + text + "\"");
-        Node node = new ProgramNode();
-        node.parse(new Context(text));
-        System.out.println("node = " + node);
+public class Main extends Frame implements ActionListener {
+  private TurtleCanvas canvas = new TurtleCanvas(400, 400);
+  private InterpreterFacade facade = new InterpreterFacade(canvas);
+  private TextField programTextField = new TextField("program repeat 3 go right go left end end");
+
+  public Main(String title) {
+    super(title);
+
+    canvas.setExecutor(facade);
+
+    setLayout(new BorderLayout());
+
+    programTextField.addActionListener(this);
+
+    this.addWindowListener(new WindowAdapter() {
+      public void windowClosing(WindowEvent e) {
+        System.exit(0);
       }
-      reader.close();
-    } catch (Exception e) {
-      e.printStackTrace();
+    });
+
+    add(programTextField, BorderLayout.NORTH);
+    add(canvas, BorderLayout.CENTER);
+    pack();
+    parseAndExecute();
+    show();
+  }
+
+  public void actionPerformed(ActionEvent e) {
+    if (e.getSource() == programTextField) {
+      parseAndExecute();
     }
+  }
+
+  private void parseAndExecute() {
+    String programText = programTextField.getText();
+    System.out.println("programText = " + programText);
+    facade.parse(programText);
+    canvas.repaint();
+  }
+
+  public static void main(String[] args) {
+    new Main("Interpreter Pattern Sample");
   }
 }
