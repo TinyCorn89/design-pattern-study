@@ -11,6 +11,7 @@ public class Main extends Frame implements ActionListener {
   private InterpreterFacade facade = new InterpreterFacade(canvas);
   private TextField programTextField = new TextField("program repeat 3 go right go left end end");
 
+  // Constructor
   public Main(String title) {
     super(title);
 
