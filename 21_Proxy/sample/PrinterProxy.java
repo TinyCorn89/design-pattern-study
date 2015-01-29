@@ -1,3 +1,9 @@
+/**
+インスタンスを２つ作ることは重くないの？
+
+*/
+
+
 public class PrinterProxy implements Printable{
 	private String name;
 	private Printer real;
@@ -32,7 +38,7 @@ public class PrinterProxy implements Printable{
 		real.print(string);
 
 		//正確には、またproxyPrinterさんに働いてもらうために、
-		//real = null;
+		//real = null;（初期化）
 		//ってした方がいいんじゃないかなぁ
 	}
 

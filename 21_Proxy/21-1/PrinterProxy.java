@@ -31,6 +31,7 @@ public class PrinterProxy implements Printable{
 		if (real == null){
 			try{
 				real =  (Printable)Class.forName(className).newInstance();
+				//API
 				real.setPrinterName(name);
 			} catch (ClassNotFoundException e) {
 				System.out.println("クラス" + className + "が見つかりません。");
