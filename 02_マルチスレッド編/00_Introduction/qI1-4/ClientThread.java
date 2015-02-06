@@ -7,7 +7,7 @@ public class ClientThread extends Thread {
 		while (true) {
 			boolean ok = bank.withdraw(1000);
 			if (ok) {
-				bank.depoit(1000);
+				bank.deposit(1000);
 			}
 		}
 	}
