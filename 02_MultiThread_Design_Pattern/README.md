@@ -36,10 +36,10 @@
 * 09_Future - 山本
 
 ####03/17(Tue) 17:00 - 18:30
-* 10_TwoPhaseTermination - 山崎
+* 10_TwoPhaseTermination - 平出
 
 ####03/20(Fri) 11:00 - 12:30
-* 11_ThreadSpecificStrage - 平出
+* 11_ThreadSpecificStrage - 山崎
 
 ####03/24(Tue) 17:00 - 18:30
 * 12_ActiveObject - 徳永
