@@ -1,6 +1,8 @@
 /**
 ケーキを作って置く担当。キッチンもホールもしゅごい
 
+
+このクラスで出来るのは、「ケーキを作る」「ケーキを置く」だけ
 */
 
 import java.util.Random;
@@ -20,8 +22,7 @@ public class MakerThread extends Thread{
 	public void run(){
 		try{
 			while(true){
-				makeCake();
-				String cake = getName() + "が作った" + nextId() + "番目のケーキ！おいしそう！";
+				String cake = makeCake();
 				table.put(cake);
 			}
 
@@ -34,11 +35,15 @@ public class MakerThread extends Thread{
 	}
 
 	//勝手に作ったケーキを作るメソッド
-	private void makeCake(){
+	private String makeCake(){
+		String cake = getName() + "が作った" + nextId() + "番目のケーキ！おいしそう！";
+
 		try{
 			Thread.sleep(random.nextInt(10000));
 		} catch (InterruptedException e){
 
 		}
+		
+		return cake;
 	}
 }
