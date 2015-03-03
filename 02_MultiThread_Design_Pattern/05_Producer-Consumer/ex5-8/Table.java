@@ -1,11 +1,5 @@
 /**
-プロデューサーさん！からのデータを受け取り、保管する
-消費者の要求に応じてテータを渡す、Channel役
-
-排他制御！
-データの同時更新を防ぐために、
-あるスレッド（役？）が利用している間は、他のスレッド（役？）が利用できないようにする	
-
+notifyAllをnotifyに変えます。
 */
 
 public class Table{
@@ -35,9 +29,7 @@ public class Table{
 		//ケーキを置くスペースがないので待機
 				//↓ガード条件！こ、これは！３章！
 		while(count >= buffer.length){
-			System.out.println(Thread.currentThread().getName() + "< ケーキがいっぱい！(wait start)");
 			wait();
-			System.out.println(Thread.currentThread().getName() + "< スペースが空いた！(wait end)");
 		}
 
 		//"tail"番のスペースにケーキを置く
@@ -47,9 +39,8 @@ public class Table{
 		//ケーキを置いたので机上のケーキの数が＋1
 		count++;
 
-		//waitしているスレッドを起こすよ
-		//これは最後に書くものなの？waitのループの直後じゃないの？
-		notifyAll();
+		//変更点
+		notify();
 	}
 
 	//ケーキを取る
@@ -57,9 +48,8 @@ public class Table{
 
 		//パンもケーキもないので、待機
 		while(count <= 0){
-			System.out.println(Thread.currentThread().getName() + "< ケーキがない（'Å`）(wait start)");
 			wait();
-			System.out.println(Thread.currentThread().getName() + "< ケーキがきた！（・８・）(wait end)");		}
+		}
 
 		//次に消費するケーキの決める
 		String cake = buffer[head];
@@ -71,7 +61,7 @@ public class Table{
 		count--;
 
 		//waitしているスレッドを起こすよ。
-		notifyAll();
+		notify();
 
 		System.out.println(Thread.currentThread().getName() + "が食べる！貪り食う！");
 		System.out.println(cake);

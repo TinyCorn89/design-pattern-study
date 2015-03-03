@@ -47,9 +47,9 @@ public class Table{
 		while(count >= buffer.length){
 			System.out.println(Thread.currentThread().getName() + "ケーキがいっぱい！");
 			wait();
-			System.out.println(Thread.currentThread().getName() + "スペースが空いた！");
-		}
 
+		}
+			System.out.println(Thread.currentThread().getName() + "スペースが空いた！");
 		//"tail"番のスペースにケーキを置く
 		buffer[tail] = cake;
 		//ケーキを置いたので、次にケーキを置くスペース番号をtailに代入
@@ -69,8 +69,9 @@ public class Table{
 		while(count <= 0){
 			System.out.println(Thread.currentThread().getName() + "ケーキがない（'Å`）");
 			wait();
-			System.out.println(Thread.currentThread().getName() + "ケーキがきた！（・８・）");		}
 
+		}
+			System.out.println(Thread.currentThread().getName() + "ケーキがきた！（・８・）");
 		//次に消費するケーキの決める
 		String cake = buffer[head];
 

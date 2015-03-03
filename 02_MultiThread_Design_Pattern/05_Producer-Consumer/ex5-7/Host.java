@@ -5,12 +5,7 @@
 public class Host{
 	public static void execute(int count){
 		for (int i = 0;i< count; i++){
-			//ここが回答！
-			if(Thread.interrupted()){
-				throw new InterruptedException();
-			}
-
-			doHeavyJob;
+			doHeavyJob();
 		}
 	}
 

@@ -41,7 +41,7 @@ public class MakerThread extends Thread{
 		try{
 			Thread.sleep(random.nextInt(10000));
 		} catch (InterruptedException e){
-
+			//
 		}
 		
 		return cake;

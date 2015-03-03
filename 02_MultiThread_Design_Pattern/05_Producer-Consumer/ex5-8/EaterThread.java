@@ -1,7 +1,5 @@
 /**
-テーブルに置かれたケーキをひたすら食べるよ。
-
-このクラスで出来るのは「ケーキを食べる」だけ
+変更なし
 */
 
 import java.util.Random;
@@ -22,19 +20,24 @@ public class EaterThread extends Thread{
 			while(true){
 				//eatCakeメソッドに入れられない！なぜ？
 				String cake = table.take();
-				//eatCake();
-				Thread.sleep(random.nextInt(10000));				
+				eatCake();
 			}
 		} catch (InterruptedException e){
-				System.out.println("catchEater");
+
 		}
 
 	}
 
 	//勝手に作ったケーキを食べるメソッド
-	private void eatCake() throws InterruptedException{
+	private void eatCake(){
 
-		Thread.sleep(random.nextInt(10000));
+		try{
 
+			//テキストでは変数つくってるけど、要らないよね?
+			//table.take();
+			Thread.sleep(random.nextInt(10000));
+		} catch (InterruptedException e){
+
+		}
 	}
 }
