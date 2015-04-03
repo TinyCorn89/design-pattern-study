@@ -14,12 +14,14 @@ public class FutureData extends FutureTask<RealData> implements Data{
 		super(callable);
 	}
 
-	public String getContent() throws ExecutionException{
+	public String getContent(){
 		String string = null;
 
 		try{
 			string = get().getContent();
 		}catch(InterruptedException e){
+			e.printStackTrace();
+		}catch(ExecutionException e){
 			e.printStackTrace();
 		}
 		return string;
