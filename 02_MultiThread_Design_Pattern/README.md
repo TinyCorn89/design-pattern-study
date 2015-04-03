@@ -32,14 +32,14 @@
 ####03/20(Fri) 11:00 - 12:30
 * 08_WorkerThread - 益永
 
-####03/27(Fri) 11:00 - 12:30
-* 09_Future - 山本
-
-####03/31(Tue) 17:00 - 18:30
-* 10_TwoPhaseTermination - 平出
-
 ####04/03(Fri) 11:00 - 12:30
-* 11_ThreadSpecificStrage - 山崎
+* 09_Future - 山本
  
 ####04/07(Tue) 17:00 - 18:30
+* 10_TwoPhaseTermination - 平出
+
+####04/10(Fri) 11:00 - 12:30
+* 11_ThreadSpecificStrage - 山崎
+
+####04/14(Tue) 17:00 - 18:30
 * 12_ActiveObject - 徳永
