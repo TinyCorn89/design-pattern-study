@@ -35,11 +35,14 @@
 ####04/03(Fri) 11:00 - 12:30
 * 09_Future - 山本
  
-####04/07(Tue) 17:00 - 18:30
+####04/10(Fri) 09:30 - 11:00
 * 10_TwoPhaseTermination - 平出
 
-####04/10(Fri) 11:00 - 12:30
-* 11_ThreadSpecificStrage - 山崎
+####04/17(Fri) 10:00 - 11:45
+* 11_ThreadSpecificStrage - 益永
 
-####04/14(Tue) 17:00 - 18:30
-* 12_ActiveObject - 徳永
+####04/21(Tue) 17:30 - 19:00
+* 12_ActiveObject - 徳永 
+
+####04/24(Fri) 10:00 - 11:45
+* 99_Memory Model - 募集中
