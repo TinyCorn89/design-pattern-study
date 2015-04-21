@@ -1,12 +1,9 @@
 public class Main {
 	public static void main(String[] args) {
 		Data data = new Data(10);
-		new ReaderThread(data).start();
-		new ReaderThread(data).start();
-		new ReaderThread(data).start();
-		new ReaderThread(data).start();
-		new ReaderThread(data).start();
-		new ReaderThread(data).start();
+		for (int i=0; i<100; i++) {
+			new ReaderThread(data).start();
+		}
 		new WriterThread(data, "ABCDEFGHIJKLMNOPQRSTUVWXYZ").start();
 		new WriterThread(data, "abcdefghijklmnopqrstuvwxyz").start();
 	}
