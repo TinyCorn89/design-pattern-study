@@ -45,4 +45,5 @@
 * 12_ActiveObject - 徳永 
 
 ####04/24(Fri) 10:00 - 11:45
-* 99_Memory Model - 募集中
+* 12_ActiveObject - 徳永
+* 99_Memory Model - 平出
